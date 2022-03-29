@@ -1,0 +1,18 @@
+      <ul>
+        <!-- Loop through tasks array -->
+        <li v-for="task in tasks" :key="task.id">
+          <!-- <input type="checkbox" id="checkbox" v-model="checked" />
+          <label for="checkbox">{{ checked }}</label> -->
+          {{ task.id }} - {{ task.name }}
+          <!-- Conditional Rendering: Render delete button if task is finished -->
+          <div v-if="task.finished">
+            <button>Delete task</button>
+          </div>
+          <div v-else-if="task.edit">
+            <button>Edit task</button>
+          </div>
+          <div v-else>
+            <p>No button</p>
+          </div>
+        </li>
+      </ul>
